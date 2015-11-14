@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Filterer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,133 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-JI-liu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Eq-lx-do7">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxt-MF-8KE">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="44"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="TLz-jE-Nme"/>
+                                            <constraint firstAttribute="height" constant="44" id="Yp6-DB-iZn"/>
+                                        </constraints>
+                                        <state key="normal" title="Filter"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TLz-jE-Nme"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="filterBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hc-by-jQ2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-fQ-ImY">
+                                        <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="2mc-a5-X3J"/>
+                                            <constraint firstAttribute="height" constant="44" id="vSg-D1-SwO"/>
+                                        </constraints>
+                                        <state key="normal" title="Compare"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2mc-a5-X3J"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="filterBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jh0-M7-q9t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYo-fF-ReF">
+                                        <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XUP-76-PBy"/>
+                                            <constraint firstAttribute="height" constant="44" id="jfp-Y5-ciW"/>
+                                        </constraints>
+                                        <state key="normal" title="Share"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jfp-Y5-ciW"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="filterBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9o-LR-87F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf7-So-zEi">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Bcn-cx-zHQ"/>
+                                            <constraint firstAttribute="height" constant="44" id="IP9-dT-cJU"/>
+                                        </constraints>
+                                        <state key="normal" title="New Photo"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Bcn-cx-zHQ"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="filterBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dy5-O9-tmQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pf7-So-zEi" firstAttribute="width" secondItem="Pxt-MF-8KE" secondAttribute="width" id="0bi-SX-O3l"/>
+                                    <constraint firstItem="Zwl-fQ-ImY" firstAttribute="width" secondItem="DYo-fF-ReF" secondAttribute="width" id="8OT-OA-eR4"/>
+                                    <constraint firstItem="Pxt-MF-8KE" firstAttribute="top" secondItem="1Eq-lx-do7" secondAttribute="top" id="9Yc-i7-Y7m"/>
+                                    <constraint firstItem="Zwl-fQ-ImY" firstAttribute="leading" secondItem="Pxt-MF-8KE" secondAttribute="trailing" constant="13" id="GZ4-mp-A3e"/>
+                                    <constraint firstItem="pf7-So-zEi" firstAttribute="top" secondItem="1Eq-lx-do7" secondAttribute="top" id="J6y-he-HNu"/>
+                                    <constraint firstItem="Zwl-fQ-ImY" firstAttribute="top" secondItem="1Eq-lx-do7" secondAttribute="top" id="JwG-WM-jMm"/>
+                                    <constraint firstItem="pf7-So-zEi" firstAttribute="leading" secondItem="1Eq-lx-do7" secondAttribute="leading" id="VrR-R8-3m6"/>
+                                    <constraint firstItem="pf7-So-zEi" firstAttribute="height" secondItem="Pxt-MF-8KE" secondAttribute="height" id="Y8k-by-Gx9"/>
+                                    <constraint firstItem="Pxt-MF-8KE" firstAttribute="leading" secondItem="pf7-So-zEi" secondAttribute="trailing" id="ejG-tc-hSG"/>
+                                    <constraint firstItem="DYo-fF-ReF" firstAttribute="top" secondItem="1Eq-lx-do7" secondAttribute="top" id="j30-JF-szV"/>
+                                    <constraint firstAttribute="trailing" secondItem="DYo-fF-ReF" secondAttribute="trailing" id="kvx-gN-Ceb"/>
+                                    <constraint firstItem="Zwl-fQ-ImY" firstAttribute="leading" secondItem="Pxt-MF-8KE" secondAttribute="trailing" id="nqg-rF-5mh"/>
+                                    <constraint firstItem="Pxt-MF-8KE" firstAttribute="width" secondItem="Zwl-fQ-ImY" secondAttribute="width" id="r44-oq-5Cf"/>
+                                    <constraint firstItem="DYo-fF-ReF" firstAttribute="leading" secondItem="Zwl-fQ-ImY" secondAttribute="trailing" id="vfA-l6-msH"/>
+                                    <constraint firstAttribute="bottom" secondItem="pf7-So-zEi" secondAttribute="bottom" id="wV1-x8-jyS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y8k-by-Gx9"/>
+                                        <exclude reference="GZ4-mp-A3e"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yig-JI-liu" secondAttribute="trailing" id="3r4-lW-roe"/>
+                            <constraint firstItem="Yig-JI-liu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Pug-3J-BKP"/>
+                            <constraint firstAttribute="trailing" secondItem="1Eq-lx-do7" secondAttribute="trailing" id="Ra4-ra-oXb"/>
+                            <constraint firstItem="1Eq-lx-do7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SFU-8P-Nq5"/>
+                            <constraint firstItem="1Eq-lx-do7" firstAttribute="top" secondItem="Yig-JI-liu" secondAttribute="bottom" id="Zb9-eo-1tC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Eq-lx-do7" secondAttribute="bottom" id="Zr7-0q-Qrf"/>
+                            <constraint firstItem="Yig-JI-liu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ctR-UV-s1s"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="filterBtn" destination="pf7-So-zEi" id="a5a-kb-Mlj"/>
+                        <outlet property="imageV" destination="Yig-JI-liu" id="Mfl-cQ-pat"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="317"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sample" width="75" height="75"/>
+    </resources>
 </document>
